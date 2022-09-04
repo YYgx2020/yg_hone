@@ -74,13 +74,16 @@ export default {
     // 获取用户登录信息
     // 判断 token 是否过期
     const token = Cookies.get('yg_c_token')
+    console.log('查看更新');
     if (token) {
       console.log('token没有过期');
       let userInfo = JSON.parse(Cookies.get('userInfo'))
       this.$store.commit('changeLoginState', true)
       console.log('用户信息：', userInfo);
-      // this.$store.commit('setToken', token)
-      // this.$store.commit('setUserInfo', userInfo)
+      this.$store.commit('setToken', token)
+      this.$store.commit('setUserInfo', userInfo)
+    } else {
+      this.$store.commit('changeLoginState', false)
     }
   },
   methods: {
@@ -108,7 +111,10 @@ export default {
     toPersonalPage() {
       console.log('跳到个人中心页');
       this.$router.push({
-        name: 'admin'
+        name: 'admin',
+        meta: {
+          title: '个人中心'
+        }
       })
     },
   }

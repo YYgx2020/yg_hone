@@ -37,10 +37,19 @@ export function getVerifyCode(data) {
 // 上传图片接口
 export function uploadImg(data) {
   return axios({
-    url: '/api/upload',
+    url: '/api/image/upload',
     method: 'post',
     data,
     headers: { 'Content-Type': 'multipart/form-data' },
+  })
+}
+
+// 删除图片接口
+export function deteleImg(data) {
+  return axios({
+    url: '/api/image/detele',
+    method: 'post',
+    data,
   })
 }
 
@@ -61,3 +70,83 @@ export function changePassword(data) {
   })
 }
 
+// 发送留言消息
+export function sendMessage(data) {
+  return axios({
+    url: '/api/message/send',
+    method: 'post',
+    data,
+  })
+}
+
+// 获取留言消息
+export function getMessage(data) {
+  return axios({
+    url: '/api/message/get',
+    method: 'get',
+    params: data,
+  })
+}
+
+// 更新留言消息，主要更新点赞数和是否被精选
+export function updateMessage(data) {
+  return axios({
+    url: '/api/message/update',
+    method: 'post',
+    data,
+  })
+}
+
+// 删除留言消息
+export function deteleMessage(data) {
+  return axios({
+    url: '/api/message/detele',
+    method: 'post',
+    data,
+  })
+}
+
+// 创建草稿文章
+export function createDraft(data) {
+  return axios({
+    url: '/api/draft/create',
+    method: 'post',
+    data,
+  })
+}
+
+// 更新草稿文章
+export function updateDraft(data) {
+  return axios({
+    url: "/api/draft/update",
+    method: 'post',
+    data,
+  })
+}
+
+// 删除草稿文章
+export function deleteDraft(data) {
+  return axios({
+    url: '/api/draft/delete',
+    method: 'post',
+    data,
+  })
+}
+
+// 根据文章的 id 来获取草稿文章的数据并回显到页面上
+// export function getDraftById(data) {
+//   return axios({
+//     url: '/api/draft/getone',
+//     method: 'get',
+//     params: data,
+//   })
+// }
+
+// 创建文章
+export function createArticle(data) {
+  return axios({
+    url: '/api/article/create',
+    method: 'post',
+    data,
+  })
+}

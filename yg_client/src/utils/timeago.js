@@ -17,6 +17,7 @@ export function timeago(dateTimeStamp) {   //dateTimeStamp是一个时间毫秒�
   var dayC = diffValue / day;
   var weekC = diffValue / week;
   var monthC = diffValue / month;
+  var result = '';
   //此处考虑小数情况，感谢 情非得已https://blog.csdn.net/weixin_48495574 指正
   if (monthC >= 1 && monthC < 4) {
     result = " " + parseInt(monthC) + "月前"

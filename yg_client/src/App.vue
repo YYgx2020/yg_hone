@@ -25,7 +25,7 @@ export default {
       //页面切换动画
       console.log(to)
       let toName = to.name
- 
+
       const toIndex = to.meta.index
       console.log('toIndex: ', toIndex);
       const fromIndex = from.meta.index
@@ -47,6 +47,7 @@ export default {
 html {
   font-size: 12px;
 }
+
 /* html,body{
     width: 100%;
     height: 100%;
@@ -59,6 +60,26 @@ a {
   /* 去除旧版浏览器的点击后的外虚线框 */
   color: #000;
   /* 去除默认的颜色和点击后变化的颜色 */
+}
+
+input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #8a919f;
+}
+
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #8a919f;
+}
+
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #8a919f;
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #8a919f;
 }
 
 #app {

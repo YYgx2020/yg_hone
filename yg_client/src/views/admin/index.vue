@@ -4,7 +4,7 @@
     <!-- pc 端个人信息布局 -->
     <div class="personal_info_panel_pc">
       <div class="user_avator">
-        <img src="../../assets/img/logo_img.png" alt="">
+        <img :src="$store.state.userInfo.user_avator" alt="">
       </div>
       <div class="user_name">
         <h1>溢狗</h1>
@@ -28,15 +28,15 @@
         </div>
       </div>
       <div class="btn_list">
-        <button class="write_article_btn">写文章</button>
+        <button class="write_article_btn" @click="toEditorPage">写文章</button>
         <!-- <button class="draft_box_btn">草稿箱</button> -->
-        <button class="layout_btn">退出登录</button>
+        <button class="layout_btn" @click="layoutEvent">退出登录</button>
       </div>
     </div>
     <div class="personal_info_panel_mobile">
       <div class="user_info_panel">
         <div class="user_avator">
-          <img src="@/assets/img/logo_1.png" alt="">
+          <img :src="$store.state.userInfo.user_avator" alt="">
         </div>
         <div class="other_info">
           <div class="user_name">
@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="layout">
-          <button>退出</button>
+          <button @click="layoutEvent">退出</button>
         </div>
       </div>
       <div class="person_data">
@@ -71,7 +71,7 @@
     <div class="detail_list">
       <ul class="nav_ul">
         <li class="nav_item">
-          <router-link active-class="active" exact to="/admin">我的博文</router-link>
+          <router-link active-class="active" exact to="/admin">我的文章</router-link>
         </li>
         <li class="nav_item">
           <router-link active-class="active" to="/admin/message">网友留言</router-link>
@@ -89,11 +89,51 @@
 
 <script>
 import Header from '@/components/common/Header'
+import Cookies from "js-cookie";
 
 export default {
   components: {
     Header
-  }
+  },
+  data() {
+    return {
+
+    }
+  },
+  created() {
+    // 从cookie中获取用户信息
+    const token = Cookies.get('yg_c_token')
+    if (token) {
+      console.log('token没有过期');
+      let userInfo = JSON.parse(Cookies.get('userInfo'))
+      this.$store.commit('changeLoginState', true)
+      console.log('用户信息：', userInfo);
+      this.$store.commit('setToken', token)
+      this.$store.commit('setUserInfo', userInfo)
+    }
+  },
+  methods: {
+    // 退出登录事件
+    layoutEvent() {
+      // 清除cookie信息，然后返回首页
+      Cookies.remove('userInfo');
+      Cookies.remove('yg_c_token');
+      this.$router.replace({
+        name: 'home',
+      })
+    },
+    // 进入写文章页面
+    toEditorPage() {
+      let routeUrl = this.$router.resolve({
+        name: 'editor',
+        query: {
+          new: new Date().getTime(),
+        },
+      })
+      // localStorage.setItem('type', '1')
+      window.open(routeUrl.href, '_blank')
+    },
+  },
 }
 </script>
 

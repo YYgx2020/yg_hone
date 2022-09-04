@@ -83,5 +83,72 @@ module.exports = {
     code: '10016',
     message: '密码错误',
     result: '',
+  },
+  messageSendError: {
+    code: '10017',
+    message: '留言消息发送失败',
+    result: '',
+  },
+  messageGetError: {
+    code: '10018',
+    message: '留言消息获取失败',
+    result: '',
+  },
+  messageUpdateError: {
+    code: '10019',
+    message: '留言消息更新失败',
+    result: '',
+  },
+  messageDeteleError: {
+    code: '10020',
+    message: '留言消息删除失败',
+    result: '',
+  },
+  imageUploadError: {
+    code: '10021',
+    message: '图片上传失败',
+    result: '',
+  },
+  imageDeteleError: {
+    code: '10022',
+    message: '图片删除失败',
+    result: '',
+  },
+  draftCreateError: {
+    code: '10023',
+    message: '草稿生成错误',
+    result: '',
+  },
+  draftGetError: {
+    code: '10024',
+    message: '草稿获取错误',
+    result: '',
+  },
+  draftUpdateError: {
+    code: '10025',
+    message: '草稿更新错误',
+    result: '',
+  },
+  draftDeteleError: {
+    code: '10026',
+    message: '草稿删除错误',
+    result: '',
+  },
+  articleCreateError: {
+    code: '10027',
+    message: '文章创建失败',
+    result: '',
+  }, articleGetError: {
+    code: '10028',
+    message: '文章获取失败',
+    result: '',
+  }, articleUpdateError: {
+    code: '10029',
+    message: '文章更新失败',
+    result: '',
+  }, articleDeteleError: {
+    code: '10030',
+    message: '文章删除失败',
+    result: '',
   }
 }

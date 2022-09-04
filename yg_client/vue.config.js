@@ -15,8 +15,8 @@ module.exports = {
     //   'http://yghomeapi.lianghongyi.com/',
     // ],
     // disableHostCheck: true,  // 开发阶段，跳过 host 检查，实现内网穿透 webpack5 已经废弃
-    // historyApiFallback: true,
-    // allowedHosts: "all",
+    historyApiFallback: true,
+    allowedHosts: "all",
     host: '127.0.0.1',
     port: '8080',
     proxy: { // 配置跨域

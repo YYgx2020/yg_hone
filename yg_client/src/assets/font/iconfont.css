@@ -8,10 +8,16 @@
 }
 
 @font-face {
+  font-family: "皇室战争 Bold";
+  font-weight: 700;
+  src: url('../font/皇室战争_Bold_mianfeiziti.com.ttf');
+}
+
+@font-face {
   font-family: "iconfont"; /* Project id 3576001 */
-  src: url('//at.alicdn.com/t/c/font_3576001_ui0ll2vth9.woff2?t=1661011547753') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3576001_ui0ll2vth9.woff?t=1661011547753') format('woff'),
-       url('//at.alicdn.com/t/c/font_3576001_ui0ll2vth9.ttf?t=1661011547753') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_3576001_vs2sa5bd5nq.woff2?t=1662205922345') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3576001_vs2sa5bd5nq.woff?t=1662205922345') format('woff'),
+       url('//at.alicdn.com/t/c/font_3576001_vs2sa5bd5nq.ttf?t=1662205922345') format('truetype');
 }
 
 .iconfont {
@@ -20,6 +26,34 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-lajitong:before {
+  content: "\e682";
+}
+
+.icon-jia:before {
+  content: "\e607";
+}
+
+.icon-jiahao:before {
+  content: "\e726";
+}
+
+.icon-quxiao:before {
+  content: "\e605";
+}
+
+.icon-31dianzan:before {
+  content: "\e604";
+}
+
+.icon-dianzan_kuai:before {
+  content: "\ec8c";
+}
+
+.icon-biaoqing:before {
+  content: "\e681";
 }
 
 .icon-gengduo:before {

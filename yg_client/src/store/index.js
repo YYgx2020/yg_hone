@@ -9,6 +9,7 @@ export default new Vuex.Store({
     isLogin: false,  // 登录状态，默认没有登录
     token: '',
     userInfo: '',
+    messageData: [],  // 
   },
   mutations: {
     showLoginPop(state, boolen) {
@@ -22,7 +23,10 @@ export default new Vuex.Store({
     },
     setUserInfo(state, userInfo) {
       state.userInfo = userInfo
-    }
+    },
+    setMessageData(state, messageData) {
+      state.messageData = messageData;
+    },
   },
   actions: {
 
